@@ -9,9 +9,5 @@ class Random:
         self.size = size
 
     def generate(self):
-        """Generates a random, uniform signal
-
-        Parameters:
-            signal (npt.NDArray): The randomly generated signal"""
-
+        """Generates a random, uniform signal"""
         return np.random.rand(self.size)
