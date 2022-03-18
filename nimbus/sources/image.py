@@ -9,7 +9,7 @@ class Image:
     def __init__(self):
         pass
 
-    def open(self, image) -> npt.NDArray:
+    def read(self, image) -> npt.NDArray:
         img = pil.open(image)
         imarray = np.array(img)
         return imarray

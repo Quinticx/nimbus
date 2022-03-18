@@ -7,7 +7,7 @@ class MockSource:
         self.signal = np.array_split(signal, len(signal) // buffer_size)
         self.index = 0
 
-    def generate(self):
+    def read(self):
         self.index += 1
         return self.signal[self.index - 1]
 
@@ -16,7 +16,7 @@ class MockSink:
     def __init__(self):
         self.buffer = []
 
-    def console_print(self, signal: npt.NDArray):
+    def execute(self, signal: npt.NDArray):
         self.buffer.append(signal)
 
     def get_buffer(self):
