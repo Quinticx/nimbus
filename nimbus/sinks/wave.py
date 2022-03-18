@@ -1,8 +1,6 @@
 import scipy.io.wavfile as spwave
 import numpy.typing as npt
 import numpy as np
-import wave
-
 
 class Wave:
     """Wave is a sink that saves a signal to a wave file"""
