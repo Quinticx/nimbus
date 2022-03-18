@@ -10,4 +10,4 @@ class Console:
     def console_print(self, signal: npt.NDArray):
         """Prints signal to console"""
         print(signal)
-        return 
+        return
