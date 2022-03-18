@@ -17,4 +17,3 @@ def test_pipeline():
     pipe.run()
     test_signal = test_sink.get_buffer()
     assert_array_equal(signal * 3, test_signal)
-
