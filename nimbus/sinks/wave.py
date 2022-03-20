@@ -1,15 +1,19 @@
-import scipy.io.wavfile as spwave
 import numpy.typing as npt
 import numpy as np
+import wave
+
 
 class Wave:
     """Wave is a sink that saves a signal to a wave file"""
 
-    def __init__(self, filename: str = "output.wav", frame_rate: int = 22050):
+    def __init__(self, filename: str = "output.wav", frame_rate: int = 44100):
         self.filename = filename
-        self.frame_rate = frame_rate
+        self.wavefile = wave.open(str(filename), "w")
+        self.wavefile.setnchannels(1)
+        self.wavefile.setframerate(frame_rate)
+        self.wavefile.setsampwidth(2)
 
-    def write(self, signal: npt.NDArray):
+    def execute(self, signal: npt.NDArray):
         """Writes signal to .wav file"""
-        spwave.write("output.wav", self.frame_rate, signal.astype(np.int16))
-        return
+        signal = signal.tobytes()
+        self.wavefile.writeframes(signal)

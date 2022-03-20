@@ -4,8 +4,10 @@ class Pipeline:
         self.transformers = transformers
         self.sink = sink
 
-    def run(self, num_iter: int = 200):
-        for i in range(num_iter):
+    def run(self, num_iter: int = None):
+        index = 0
+        while num_iter is None or index < num_iter:
+            index += 1
             try:
                 sample = self.source.read()
 
