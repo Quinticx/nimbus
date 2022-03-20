@@ -7,7 +7,7 @@ class Console:
     def __init__(self):
         pass
 
-    def console_print(self, signal: npt.NDArray):
+    def execute(self, signal: npt.NDArray):
         """Prints signal to console"""
         print(signal)
         return
