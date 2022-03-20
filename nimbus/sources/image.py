@@ -6,10 +6,14 @@ import numpy as np
 class Image:
     """Image is a source that takes in an image and converts it to a numpy array"""
 
-    def __init__(self):
-        pass
+    def __init__(self, image: str):
+        self.image = image
+        img = pil.open(self.image)
+        self.imarray = np.array(img)
+        self.index = 0
 
-    def read(self, image) -> npt.NDArray:
-        img = pil.open(image)
-        imarray = np.array(img)
-        return imarray
+    def read(self) -> npt.NDArray:
+        '''Returns Image row by row'''
+        self.index +=1
+        return self.imarray[self.index-1, :]
+    
