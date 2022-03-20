@@ -6,7 +6,7 @@ class Pipeline:
 
     def run(self, num_iter: int = None):
         index = 0
-        while(num_iter is None or index < num_iter):
+        while num_iter is None or index < num_iter:
             index += 1
             try:
                 sample = self.source.read()

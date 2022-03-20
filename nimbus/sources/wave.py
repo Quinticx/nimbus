@@ -3,10 +3,11 @@ import numpy.typing as npt
 import wave
 import pathlib
 
+
 class Wave:
     """Wave is a source that reads from a wave file (.wav) and returns the signal"""
 
-    def __init__(self, filename: pathlib.Path, buffer_size: int=128):
+    def __init__(self, filename: pathlib.Path, buffer_size: int = 128):
         self.wavefile = wave.open(str(filename))
         self.buffer_size = buffer_size
 
