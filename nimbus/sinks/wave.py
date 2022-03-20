@@ -17,3 +17,6 @@ class Wave:
         """Writes signal to .wav file"""
         signal = signal.tobytes()
         self.wavefile.writeframes(signal)
+
+    def close(self):
+        self.wavefile.close()

@@ -8,9 +8,12 @@ class Image:
 
     def __init__(self, filename: str = "output.png"):
         self.filename = filename
+        self.buffer = []
 
     def execute(self, signal: npt.NDArray):
         """Writes signal to a .png file"""
-        image = pil.fromarray(np.uint8(signal))
+        self.buffer.append(signal)
+
+    def close(self):
+        image = pil.fromarray(np.uint8(self.buffer))
         image.save(self.filename)
-        return
