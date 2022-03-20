@@ -14,7 +14,6 @@ class Image:
         """Writes signal to a .png file"""
         self.buffer.append(signal)
 
-
     def close(self):
         image = pil.fromarray(np.uint8(self.buffer))
         image.save(self.filename)

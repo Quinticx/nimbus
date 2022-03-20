@@ -13,7 +13,6 @@ class Image:
         self.index = 0
 
     def read(self) -> npt.NDArray:
-        '''Returns Image row by row'''
-        self.index +=1
-        return self.imarray[self.index-1, :]
-    
+        """Returns Image row by row"""
+        self.index += 1
+        return self.imarray[self.index - 1, :]

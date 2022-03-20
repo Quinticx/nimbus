@@ -21,4 +21,3 @@ class Pipeline:
                 except AttributeError:
                     pass
                 return
-            
