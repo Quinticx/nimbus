@@ -15,5 +15,6 @@ class Image:
         self.buffer.append(signal)
 
     def close(self):
-        image = pil.fromarray(np.uint8(self.buffer))
+        image = pil.fromarray(np.uint8((np.array(self.buffer[:-1]))))
+
         image.save(self.filename)
