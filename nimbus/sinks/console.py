@@ -1,4 +1,5 @@
 import numpy.typing as npt
+from nimbus import Samples
 
 
 class Console:
@@ -7,7 +8,7 @@ class Console:
     def __init__(self):
         pass
 
-    def execute(self, signal: npt.NDArray):
+    def execute(self, signal: Samples):
         """Prints signal to console"""
-        print(signal)
+        print(signal.data)
         return

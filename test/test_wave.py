@@ -5,7 +5,7 @@ import pytest as pt
 from nimbus.sources import Wave as ws
 from nimbus.sinks import Wave as wf
 from nimbus.transformers import Gain
-from nimbus import Pipeline
+from nimbus import Pipeline, Samples
 from test.mocks import MockSink, MockSource
 
 
@@ -18,8 +18,8 @@ def test_wavefile(tmp_path):
     expected_data = data.astype(np.int16)
     filename = tmp_path / "test_wave.wav"
 
-    test_source = MockSource(expected_data)
-    wave_sink = wf(filename, samplerate)
+    test_source = MockSource(expected_data, sample_rate=samplerate)
+    wave_sink = wf(filename)
 
     pipeline1 = Pipeline(test_source, [Gain(1)], wave_sink)
     pipeline1.run()
@@ -44,8 +44,8 @@ def test_wavesink(tmp_path):
     expected_data = expected_data.astype(np.int16)
     filename = tmp_path / "test_wave.wav"
 
-    test_source = MockSource(expected_data)
-    test_sink = wf(filename, samplerate)
+    test_source = MockSource(expected_data, sample_rate=samplerate)
+    test_sink = wf(filename)
 
     pipeline = Pipeline(test_source, [Gain(1)], test_sink)
     pipeline.run()

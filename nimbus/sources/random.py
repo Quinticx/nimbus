@@ -1,5 +1,6 @@
 import numpy as np
 import numpy.typing as npt
+from nimbus import Samples
 
 
 class Random:
@@ -10,4 +11,4 @@ class Random:
 
     def generate(self):
         """Generates a random, uniform signal"""
-        return np.random.rand(self.size)
+        return Samples(data=np.random.rand(self.size))

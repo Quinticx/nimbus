@@ -1,6 +1,7 @@
 import numpy as np
 import numpy.typing as npt
 import scipy.signal as sp
+from nimbus import Samples
 
 
 class Hilbert:
@@ -10,12 +11,12 @@ class Hilbert:
         """Constructs a new Hilbert transformer with a signal"""
         pass
 
-    def execute(self, signal: npt.NDArray) -> npt.NDArray:
+    def execute(self, signal: Samples) -> Samples:
         """Performs Hilbert transform on signal
 
         Parameters:
-            signal (npt.NDArray): The signal to transform
+            signal (Samples): The signal to transform
         """
-        analytic_signal = sp.hilbert(signal)
+        analytic_signal = sp.hilbert(signal.data)
         amp_envelope = np.abs(analytic_signal)
-        return amp_envelope
+        return signal.replace(data=amp_envelope)

@@ -1,6 +1,7 @@
 import numpy as np
 import numpy.typing as npt
 from PIL import Image as pil
+from nimbus import Samples
 
 
 class Image:
@@ -10,9 +11,9 @@ class Image:
         self.filename = filename
         self.buffer = []
 
-    def execute(self, signal: npt.NDArray):
+    def execute(self, signal: Samples):
         """Writes signal to a .png file"""
-        self.buffer.append(signal)
+        self.buffer.append(signal.data)
 
     def close(self):
         image = pil.fromarray(np.uint8((np.array(self.buffer[:-1]))))
