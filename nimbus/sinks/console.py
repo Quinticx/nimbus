@@ -1,5 +1,6 @@
 import numpy.typing as npt
 from nimbus import Samples
+import numpy as np
 
 
 class Console:
