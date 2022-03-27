@@ -15,9 +15,9 @@ class Pipeline:
                     sample = t.execute(sample)
 
                 self.sink.execute(sample)
-            except:
+            except Exception as e:
                 try:
                     self.sink.close()
                 except AttributeError:
                     pass
-                return
+                raise e
