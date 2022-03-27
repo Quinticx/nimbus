@@ -1,5 +1,6 @@
 import pyaudio
 import wave
+import numpy as np
 from nimbus import Samples
 
 
@@ -13,6 +14,7 @@ class Audio:
         if self.stream == None:
             p = pyaudio.PyAudio()
             self.stream = p.open(
-                format=pyaudio.paInt16, channels=1, rate=signal.sample_rate, output=True
+                format=pyaudio.paFloat32, channels=1, rate=signal.sample_rate, output=True
             )
-        self.stream.write(signal.data.tobytes())
+        data = signal.data.astype(np.float32).tostring()
+        self.stream.write(data)
