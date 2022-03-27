@@ -15,7 +15,7 @@ class Pipeline:
                     sample = t.execute(sample)
 
                 self.sink.execute(sample)
-            except IndexError:
+            except:
                 try:
                     self.sink.close()
                 except AttributeError:
