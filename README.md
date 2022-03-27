@@ -1,5 +1,5 @@
 # Nimbus
-Nimbus, named after Nimbus-1, the first satellite to transmit using the APT format, is an open-source framework that is easily composable and allows for both real-time (coming soon) and pre-recorded signal processing and image reconstruction.
+Nimbus, named after Nimbus-1, the first satellite to transmit using the APT format, is an open-source framework that is easily composable and allows for both real-time (coming soon) and pre-recorded signal processing and image reconstruction of weather satellite data.
 
 
 ## Useage
@@ -36,3 +36,13 @@ The output of the FM Demodulation stage is a 256 level amplitude modulated signa
 
 ### APT Decoding
 APT Data is encoded into scan lines that are transmitted at a rate of 2 per second. Each scan line contains 2080 pixels. Half of which are used for image data, and the remaining pixels are used for synchronization and satellite telemetry information. Decoding APT starts by locating a sync frame in the input signal, a 36 pixel long string of white and black pixels that corresponds to the start of the first video channel. Once the sync frame is established 47 pixels are skipped and then 909 pixels of image data are read. After the image data there are 45 pixels of telemetry data. The same sequence is repeated (with a different sync frame) for the second channel. Consecutive scan lines are stacked and the resulting image can be displayed.
+
+## Coming Soon
+Sooner:
+1. IQ data support
+2. Real-time rendering
+3. Country border overlay on images
+
+Later:
+1. GOES Satellite support
+2. METEOR Satellite support
