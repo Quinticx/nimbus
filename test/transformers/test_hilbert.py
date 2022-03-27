@@ -2,6 +2,7 @@ from nimbus.transformers import Hilbert
 import numpy as np
 from numpy.testing import assert_array_equal
 from scipy.signal import chirp, hilbert
+from nimbus import Samples
 
 
 def test_hilbert_chirp():
@@ -17,6 +18,6 @@ def test_hilbert_chirp():
     amplitude_envelope = np.abs(analytic_signal)
 
     hb = Hilbert()
-    test_envelope = hb.execute(signal)
+    test_envelope = hb.execute(Samples(signal)).data
 
     assert_array_equal(test_envelope, amplitude_envelope)

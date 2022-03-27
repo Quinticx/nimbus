@@ -1,5 +1,6 @@
 import numpy as np
 import numpy.typing as npt
+from nimbus import Samples
 
 
 class Gain:
@@ -13,10 +14,10 @@ class Gain:
         """
         self.gain = gain
 
-    def execute(self, signal: npt.NDArray) -> npt.NDArray:
+    def execute(self, signal: Samples) -> Samples:
         """Applies a gain to the input
 
         Parameters:
-            signal (npt.NDArray): The signal to gain
+            signal (Samples): The signal to gain
         """
-        return signal * self.gain
+        return signal.replace(data=signal.data * self.gain)

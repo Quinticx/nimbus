@@ -1,6 +1,7 @@
 import numpy.typing as npt
 from PIL import Image as pil
 import numpy as np
+from nimbus import Samples
 
 
 class Image:
@@ -15,4 +16,4 @@ class Image:
     def read(self) -> npt.NDArray:
         """Returns Image row by row"""
         self.index += 1
-        return self.imarray[self.index - 1, :]
+        return Samples(self.imarray[self.index - 1, :])

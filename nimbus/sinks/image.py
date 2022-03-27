@@ -1,6 +1,7 @@
 import numpy as np
 import numpy.typing as npt
 from PIL import Image as pil
+from nimbus import Samples
 
 
 class Image:
@@ -10,11 +11,21 @@ class Image:
         self.filename = filename
         self.buffer = []
 
-    def execute(self, signal: npt.NDArray):
+    def execute(self, signal: Samples):
         """Writes signal to a .png file"""
-        self.buffer.append(signal)
+        self.buffer.append(signal.data)
 
     def close(self):
-        image = pil.fromarray(np.uint8((np.array(self.buffer[:-1]))))
+        # Find largest array size
+        max_size = max(map(lambda arr: arr.size, self.buffer))
+
+        # Padd every image buffer to largest size
+        tmp = map(
+            lambda arr: np.concatenate((arr, np.zeros(max_size - arr.size))),
+            self.buffer,
+        )
+        img_buffer = np.stack(tmp)
+
+        image = pil.fromarray(np.uint8(img_buffer[:, :2080]))
 
         image.save(self.filename)
