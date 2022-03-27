@@ -13,8 +13,8 @@ pipeline = nimbus.Pipeline(
     [
         nimbus.transformers.FM_Demod(),
         nimbus.transformers.Resample(44700),
-        nimbus.transformers.Gain(2)
-        ],
+        nimbus.transformers.Gain(2),
+    ],
     audio_sink,
 )
 pipeline.run()

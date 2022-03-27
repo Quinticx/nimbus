@@ -14,7 +14,10 @@ class Audio:
         if self.stream == None:
             p = pyaudio.PyAudio()
             self.stream = p.open(
-                format=pyaudio.paFloat32, channels=1, rate=signal.sample_rate, output=True
+                format=pyaudio.paFloat32,
+                channels=1,
+                rate=signal.sample_rate,
+                output=True,
             )
         data = signal.data.astype(np.float32).tostring()
         self.stream.write(data)
