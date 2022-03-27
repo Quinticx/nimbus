@@ -10,6 +10,13 @@ poetry install
 poetry run python examples/wave_to_image.py
 ```
 
+## Dependencies
+### Ubuntu
+```
+sudo apt install portaudio19-dev
+
+```
+
 ## Background
 NOAA maintains several weather satellites responsible for weather analysis and forecasting, climate research and prediction, temperature measurements, and more. Among these satellites are the Polar Operational Environmental Satellites (POES) group. POES satellites have several sensors, such as a microwave imager, ultraviolet sensor, and more, that allow them to perform their daily duties in aiding weather researchers and forecasters across the country. 
 
