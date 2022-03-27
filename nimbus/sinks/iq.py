@@ -2,22 +2,22 @@ import numpy as np
 from nimbus import Samples
 import json
 
+
 class IQ:
-    '''IQ is a sink that saves a signal to a .iq file'''
+    """IQ is a sink that saves a signal to a .iq file"""
 
     def __init__(self, filename: str = "output.iq"):
         self.filename = filename
-        self.iqfile = open(self.filename, 'wb')
+        self.iqfile = open(self.filename, "wb")
         self.has_run = False
-        self.jsonfilename = self.filename.with_suffix('.json')
-        self.jsonfile = open(self.jsonfilename, 'w')
+        self.jsonfilename = self.filename.with_suffix(".json")
+        self.jsonfile = open(self.jsonfilename, "w")
 
-        
     def execute(self, signal: Samples):
-        '''Writes signal to a .iq file'''
+        """Writes signal to a .iq file"""
         if self.has_run == False:
 
-            info = json.dump({'sample_rate': signal.sample_rate}, self.jsonfile)
+            info = json.dump({"sample_rate": signal.sample_rate}, self.jsonfile)
             self.has_run = True
         signal = signal.data.astype(np.complex64)
         signal = signal.tobytes()
