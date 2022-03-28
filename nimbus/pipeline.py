@@ -20,4 +20,4 @@ class Pipeline:
                     self.sink.close()
                 except AttributeError:
                     pass
-                raise e
+                return
