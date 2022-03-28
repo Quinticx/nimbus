@@ -16,6 +16,11 @@ class Pipeline:
 
                 self.sink.execute(sample)
             except (EOFError, KeyboardInterrupt) as e:
+                for t in self.transformers:
+                    try:
+                        t.close()
+                    except AttributeError:
+                        pass
                 try:
                     self.sink.close()
                 except AttributeError:
