@@ -25,3 +25,4 @@ class IQ:
 
     def close(self):
         self.iqfile.close()
+        self.jsonfile.close()
