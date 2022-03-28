@@ -1,5 +1,3 @@
-import numpy.typing as npt
-import numpy as np
 import wave
 from nimbus import Samples
 

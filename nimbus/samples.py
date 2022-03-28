@@ -4,7 +4,8 @@ from dataclasses import dataclass, replace
 
 @dataclass
 class Samples:
-    """Samples is a data class that keeps samples and their metadata together between Pipeline stages"""
+    """Samples is a data class that keeps samples and their
+    metadata together between Pipeline stages"""
 
     data: npt.NDArray
     sample_rate: int = 0

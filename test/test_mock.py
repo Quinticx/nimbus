@@ -18,8 +18,8 @@ def test_mock_source():
     signal3 = signal.read().data
     assert_array_equal(signal3, r[10:15])
 
-    with pt.raises(IndexError):
-        signal4 = signal.read().data
+    with pt.raises(EOFError):
+        signal.read().data
 
 
 def test_mock_sink():

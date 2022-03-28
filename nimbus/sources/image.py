@@ -5,7 +5,8 @@ from nimbus import Samples
 
 
 class Image:
-    """Image is a source that takes in an image and converts it to a numpy array"""
+    """Image is a source that takes in an image and converts
+    it to a numpy array"""
 
     def __init__(self, image: str):
         self.image = image

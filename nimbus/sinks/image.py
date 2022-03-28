@@ -1,5 +1,4 @@
 import numpy as np
-import numpy.typing as npt
 from PIL import Image as pil
 from nimbus import Samples
 

@@ -1,11 +1,11 @@
 import numpy as np
-import numpy.typing as npt
 import scipy.signal as sp
 from nimbus import Samples
 
 
 class Hilbert:
-    """Hilbert is a transformer that applies a Hilbert transform on a signal to perform AM demodulation"""
+    """Hilbert is a transformer that applies a Hilbert transform
+    on a signal to perform AM demodulation"""
 
     def __init__(self):
         """Constructs a new Hilbert transformer with a signal"""

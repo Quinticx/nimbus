@@ -2,7 +2,6 @@ import nimbus
 import nimbus.sources
 import nimbus.sinks
 import nimbus.transformers
-import numpy as np
 from pathlib import Path
 
 iq_source = nimbus.sources.IQ(Path("examples/test_iq.iq"))

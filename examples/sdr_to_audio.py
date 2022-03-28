@@ -2,7 +2,6 @@ import nimbus
 import nimbus.sources
 import nimbus.sinks
 import nimbus.transformers
-import numpy as np
 
 sdr_source = nimbus.sources.SDR(sample_rate=2.56e5, frequency=9.91e7)
 audio_sink = nimbus.sinks.Audio()

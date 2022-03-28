@@ -1,11 +1,10 @@
 import numpy as np
 import scipy.io.wavfile as spwave
 from numpy.testing import assert_array_equal
-import pytest as pt
 from nimbus.sources import Wave as ws
 from nimbus.sinks import Wave as wf
 from nimbus.transformers import Gain
-from nimbus import Pipeline, Samples
+from nimbus import Pipeline
 from test.mocks import MockSink, MockSource
 
 

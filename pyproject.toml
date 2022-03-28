@@ -17,6 +17,8 @@ pytest = "^7.0.1"
 black = "^22.1.0"
 pylint = "^2.12.2"
 pytest-cov = "^3.0.0"
+flake8 = "^4.0.1"
+Sphinx = "^4.5.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

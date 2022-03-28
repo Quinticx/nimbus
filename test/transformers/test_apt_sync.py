@@ -2,7 +2,6 @@ import numpy as np
 import pytest as pt
 from numpy.testing import assert_array_equal
 from nimbus.transformers import Apt_Sync
-import scipy.stats as ss
 from nimbus import Samples
 from nimbus.transformers.aptsync import find_sync_frame
 
@@ -31,5 +30,5 @@ def test_find_sync_fail():
     sync_frame = np.array([1, 0] * 10)
     test_signal = np.random.rand(180)
 
-    with pt.raises(IndexError):
-        index = find_sync_frame(test_signal, sync_frame)
+    with pt.raises(EOFError):
+        find_sync_frame(test_signal, sync_frame)

@@ -15,9 +15,9 @@ class IQ:
 
     def execute(self, signal: Samples):
         """Writes signal to a .iq file"""
-        if self.has_run == False:
+        if not self.has_run:
 
-            info = json.dump({"sample_rate": signal.sample_rate}, self.jsonfile)
+            json.dump({"sample_rate": signal.sample_rate}, self.jsonfile)
             self.has_run = True
         signal = signal.data.astype(np.complex64)
         signal = signal.tobytes()

@@ -1,12 +1,12 @@
 import numpy as np
-import numpy.typing as npt
 import wave
 import pathlib
 from nimbus import Samples
 
 
 class Wave:
-    """Wave is a source that reads from a wave file (.wav) and returns the signal"""
+    """Wave is a source that reads from a wave file (.wav)
+    and returns the signal"""
 
     def __init__(self, filename: pathlib.Path, buffer_size: int = 128):
         self.wavefile = wave.open(str(filename))

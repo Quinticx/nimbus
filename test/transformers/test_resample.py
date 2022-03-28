@@ -1,8 +1,6 @@
-import scipy.signal as sp
 from nimbus import Samples
 from nimbus.transformers import Resample
 import numpy as np
-from test.mocks import MockSource, MockSink
 from numpy.testing import assert_array_equal
 
 

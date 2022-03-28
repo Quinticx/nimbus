@@ -1,7 +1,7 @@
 import numpy as np
-import numpy.typing as npt
 import scipy.signal as sp
 from nimbus import Samples
+import numpy.typing as npt
 
 
 class Apt_Sync:

@@ -1,6 +1,4 @@
 import scipy.signal as sp
-import numpy as np
-import numpy.typing as npt
 from nimbus import Samples
 
 

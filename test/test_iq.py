@@ -1,10 +1,9 @@
 from nimbus.sinks import IQ as iqf
 from nimbus.sources import IQ as iqs
-from nimbus import Pipeline, Samples
+from nimbus import Pipeline
 from test.mocks import MockSink, MockSource
 import numpy as np
 from numpy.testing import assert_array_equal
-import pytest as pt
 
 def test_iqfile(tmp_path):
     filename = tmp_path / "test_iq.iq"
