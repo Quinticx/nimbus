@@ -9,4 +9,4 @@ class Resample:
     def execute(self, signal: Samples) -> Samples:
         num_samp = int((self.sample_rate / signal.sample_rate) * len(signal.data))
         new_signal = sp.resample(signal.data, num_samp)
-        return Samples(new_signal, self.sample_rate)
+        return Samples(new_signal.astype(signal.data.dtype), self.sample_rate)
