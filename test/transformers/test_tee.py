@@ -4,6 +4,7 @@ from nimbus import Pipeline
 import numpy as np
 from numpy.testing import assert_array_equal
 
+
 def test_tee():
     expected_data = np.random.rand(10)
 
@@ -19,4 +20,4 @@ def test_tee():
 
     assert_array_equal(expected_data, tee_output)
 
-    assert_array_equal(expected_data*2, test_output)
+    assert_array_equal(expected_data * 2, test_output)
