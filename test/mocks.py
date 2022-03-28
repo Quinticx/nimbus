@@ -11,6 +11,8 @@ class MockSource:
 
     def read(self):
         self.index += 1
+        if self.index > len(self.signal):
+            raise EOFError()
         return Samples(data=self.signal[self.index - 1], sample_rate=self.sample_rate)
 
 

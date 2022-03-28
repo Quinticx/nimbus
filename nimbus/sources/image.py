@@ -16,4 +16,6 @@ class Image:
     def read(self) -> npt.NDArray:
         """Returns Image row by row"""
         self.index += 1
+        if self.index > len(self.imarray):
+            raise EOFError()
         return Samples(self.imarray[self.index - 1, :])

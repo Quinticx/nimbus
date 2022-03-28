@@ -19,6 +19,6 @@ class IQ:
         """Read .iq file and return signal"""
         data = self.iqfile.read(self.buffer_size)
         if not data:
-            raise IndexError()
+            raise EOFError()
         data = np.frombuffer(data, dtype=np.complex64)
         return Samples(data=data, sample_rate=self.sample_rate)

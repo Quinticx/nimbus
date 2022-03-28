@@ -17,6 +17,6 @@ class Wave:
         """Read .wav file and return signal"""
         data = self.wavefile.readframes(self.buffer_size)
         if not data:
-            raise IndexError()
+            raise EOFError()
         data = np.frombuffer(data, dtype="int16")
         return Samples(data=data, sample_rate=self.sample_rate)

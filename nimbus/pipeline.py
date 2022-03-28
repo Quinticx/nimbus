@@ -15,7 +15,7 @@ class Pipeline:
                     sample = t.execute(sample)
 
                 self.sink.execute(sample)
-            except Exception as e:
+            except (EOFError, KeyboardInterrupt) as e:
                 try:
                     self.sink.close()
                 except AttributeError:
