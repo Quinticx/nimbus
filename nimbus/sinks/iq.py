@@ -15,6 +15,9 @@ class IQ:
 
     def execute(self, signal: Samples):
         """Writes signal to a .iq file"""
+        if not signal.data.dtype == np.complex64:
+            raise ValueError(f"IQ Sink requires np.complex64 signal: {signal.data.dtype}")
+
         if not self.has_run:
 
             json.dump({"sample_rate": signal.sample_rate}, self.jsonfile)

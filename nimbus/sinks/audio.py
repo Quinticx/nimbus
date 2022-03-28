@@ -10,6 +10,9 @@ class Audio:
         self.stream = None
 
     def execute(self, signal: Samples):
+        if not signal.data.dtype == np.float32:
+            raise ValueError(f"Audio Sink requires np.float32 signal: {signal.data.dtype}")
+
         if self.stream is None:
             p = pyaudio.PyAudio()
             self.stream = p.open(
