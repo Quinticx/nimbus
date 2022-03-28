@@ -2,6 +2,7 @@ import wave
 from nimbus import Samples
 import numpy as np
 
+
 class Wave:
     """Wave is a sink that saves a signal to a wave file"""
 

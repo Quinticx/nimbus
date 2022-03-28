@@ -13,7 +13,9 @@ class FM_Demod:
             signal (Samples): The signal to transform
         """
         if not signal.data.dtype == np.complex64:
-            raise ValueError(f"FM Demod Transformer requires np.complex64 signal: {signal.data.dtype}")
+            raise ValueError(
+                f"FM Demod Transformer requires np.complex64 signal: {signal.data.dtype}"
+            )
 
         sample = np.diff((np.unwrap(np.angle(signal.data))) / (2 * np.pi))
         return signal.replace(data=sample)
