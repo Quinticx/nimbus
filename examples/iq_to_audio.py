@@ -4,7 +4,7 @@ import nimbus.sinks
 import nimbus.transformers
 from pathlib import Path
 
-iq_source = nimbus.sources.IQ(Path("examples/test_iq.iq"))
+iq_source = nimbus.sources.IQ(Path("examples/test_tee_iq.iq"))
 audio_sink = nimbus.sinks.Audio()
 console_sink = nimbus.sinks.Console()
 
