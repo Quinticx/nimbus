@@ -13,6 +13,10 @@ class Apt_Sync:
         self.sync_frame = sync_frame
 
     def execute(self, signal: Samples) -> Samples:
+        if not signal.data.dtype in [np.float32, np.float64]:
+            raise ValueError(
+                f"Apt_Sync Transformer requires np.float32 or np.float64 signal: {signal.data.dtype}"
+            )
         samples = signal.data
         index = find_sync_frame(samples, self.sync_frame)
         current = samples[: index + 1]

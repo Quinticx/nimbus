@@ -18,5 +18,5 @@ class Hilbert:
             signal (Samples): The signal to transform
         """
         analytic_signal = sp.hilbert(signal.data)
-        amp_envelope = np.abs(analytic_signal)
+        amp_envelope = (np.abs(analytic_signal) - 0.5) * 2
         return signal.replace(data=amp_envelope)

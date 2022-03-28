@@ -1,5 +1,6 @@
 import wave
 from nimbus import Samples
+import numpy as np
 
 
 class Wave:
@@ -13,6 +14,8 @@ class Wave:
 
     def execute(self, signal: Samples):
         """Writes signal to .wav file"""
+        if not signal.data.dtype == np.int16:
+            raise ValueError(f"Wave Sink requires int16 signal: {signal.data.dtype}")
         try:
             self.wavefile.setframerate(signal.sample_rate)
         except wave.Error:

@@ -5,6 +5,7 @@ from test.mocks import MockSink, MockSource
 import numpy as np
 from numpy.testing import assert_array_equal
 
+
 def test_iqfile(tmp_path):
     filename = tmp_path / "test_iq.iq"
     expected_data = np.random.random(10) + np.random.random(10) * 1j

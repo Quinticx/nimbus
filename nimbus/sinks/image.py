@@ -12,6 +12,10 @@ class Image:
 
     def execute(self, signal: Samples):
         """Writes signal to a .png file"""
+        if not signal.data.dtype == np.uint8:
+            raise ValueError(
+                f"Image Sink requires np.uint8 signal: {signal.data.dtype}"
+            )
         self.buffer.append(signal.data)
 
     def close(self):

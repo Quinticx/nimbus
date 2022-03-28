@@ -11,7 +11,7 @@ class IQ:
         self.filename = filename
         self.iqfile = open(self.filename, "rb")
         self.buffer_size = buffer_size
-        jsonfile = open(filename.with_suffix(".json"), 'r')
+        jsonfile = open(filename.with_suffix(".json"), "r")
         info = json.load(jsonfile)
         self.sample_rate = info["sample_rate"]
 

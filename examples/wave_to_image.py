@@ -51,12 +51,12 @@ console_sink = nimbus.sinks.Console()
 pipeline = nimbus.Pipeline(
     wave_source,
     [
+        nimbus.transformers.Caster(np.float32),
         nimbus.transformers.Hilbert(),
-        nimbus.transformers.Gain(1 / 32768),
+        nimbus.transformers.Tee(console_sink),
         nimbus.transformers.Resample(sample_rate=4160),
         nimbus.transformers.Apt_Sync(sync_frame),
-        nimbus.transformers.Gain(255),
-        nimbus.transformers.Gain(1.8),
+        nimbus.transformers.Caster(np.uint8),
     ],
     image_sink,
 )
