@@ -22,6 +22,7 @@ class Wave:
 
     def __init__(self, filename: pathlib.Path, buffer_size: int = 128):
         """
+        Constructs a new Wave Source
         Parameters
         ----------
         filename: pathlib.Path
@@ -42,7 +43,7 @@ class Wave:
         Returns
         -------
         Samples
-            Samples data class object
+            New Samples data class object where data is data and sample_rate is sample_rate
 
         Raises
         ------

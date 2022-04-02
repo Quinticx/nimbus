@@ -21,6 +21,7 @@ class SDR:
 
     def __init__(self, sample_rate: int, frequency: int):
         """
+        Constructs new SDR Source
         Parameters
         ----------
         sample_rate: int
@@ -42,7 +43,7 @@ class SDR:
         Returns
         -------
         Samples
-            Samples data class object
+            New Samples data class object where data is samples and sample_rate is sample rate
         """
         num_samp = 2048
         samples = np.array(self.sdr.read_samples(num_samp))

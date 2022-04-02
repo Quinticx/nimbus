@@ -18,6 +18,7 @@ class Image:
 
     def __init__(self, image: pathlib.Path):
         """
+        Constructs a new Image Source
         Parameters
         ----------
         image: pathlib.Path
@@ -35,7 +36,7 @@ class Image:
         Returns
         -------
         Samples
-            Samples data class object
+            New Samples data class object where data is imgarray and no sample_rate is set
 
         Raises
         ------

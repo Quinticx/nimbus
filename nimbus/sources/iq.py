@@ -21,6 +21,7 @@ class IQ:
 
     def __init__(self, filename: pathlib.Path, buffer_size: int = 2048):
         """
+        Constructs new IQ Source
         Parameters
         ----------
         filename: pathlib.Path
@@ -45,7 +46,7 @@ class IQ:
         Returns
         -------
         Samples
-            Samples data class object
+            New Samples data class object where data is data and sample_rate is sample_rate
 
         Raises
         ------
