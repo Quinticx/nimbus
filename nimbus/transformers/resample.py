@@ -12,6 +12,7 @@ class Resample:
         New samples rate
 
     """
+
     def __init__(self, sample_rate: int):
         """
         Constructs a new Resample transformer

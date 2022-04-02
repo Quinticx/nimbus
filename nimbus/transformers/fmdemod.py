@@ -6,8 +6,9 @@ class FM_Demod:
     """
     FM_Demod is a transformer class that takes in a signal and fm demodulates it.
     """
+
     def __init__(self):
-        """ 
+        """
         Constructs new FM_Demod Transformer
         """
         pass

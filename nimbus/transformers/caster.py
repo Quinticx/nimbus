@@ -68,7 +68,7 @@ class Caster:
         ----------
         signal: Samples
             Signal to be converted
-        
+
         Returns
         -------
         signal: Samples

@@ -18,7 +18,7 @@ class Gain:
 
         Parameters
         ----------
-        gain: float 
+        gain: float
             The gain of the transformer
         """
         self.gain = gain
