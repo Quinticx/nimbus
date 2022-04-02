@@ -39,9 +39,8 @@ APT Data is encoded into scan lines that are transmitted at a rate of 2 per seco
 
 ## Coming Soon
 Sooner:
-1. IQ data support
-2. Real-time rendering
-3. Country border overlay on images 
+1. Real-time rendering
+2. Country border overlay on images 
 
 Later:
 1. GOES Satellite 🛰️ support
