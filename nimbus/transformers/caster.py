@@ -35,12 +35,51 @@ transforms = {
 
 
 class Caster:
-    """Caster is a transformer that takes in a signal of one type and casts it to another type"""
+    """
+    Caster is a transformer that takes in a signal of one type and casts it to another type
+
+    Attributes
+    ----------
+    transforms
+        Dictionary of numpy type conversions
+
+    Notes
+    -----
+        Caster is used when converting between Sources, Transformers, or Sinks.
+    """
 
     def __init__(self, dtype: np.dtype):
+        """
+        Constructs new Caster
+
+        Parameters
+        ----------
+        dtype: np.dtype
+            Type signal should be converted to.
+
+        """
         self.dtype = dtype
 
     def execute(self, signal: Samples) -> Samples:
+        """
+        Converts signal to new type
+
+        Parameters
+        ----------
+        signal: Samples
+            Signal to be converted
+        
+        Returns
+        -------
+        signal: Samples
+            Returns signal.data of new signal type
+
+        Raises
+        ------
+        ValueError
+            Cannot convert signal type to new type.
+
+        """
         signal_type = signal.data.dtype.type
         try:
             return signal.replace(data=transforms[signal_type][self.dtype](signal.data))
