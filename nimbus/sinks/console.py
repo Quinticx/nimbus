@@ -12,6 +12,9 @@ class Console:
     """
 
     def __init__(self):
+        """
+        Constructs new Console Sink
+        """
         pass
 
     def execute(self, signal: Samples):

@@ -16,6 +16,7 @@ class Wave:
 
     def __init__(self, filename: str = "output.wav"):
         """
+        Constructs new Wave Sink
         Parameters
         ----------
         filename: str

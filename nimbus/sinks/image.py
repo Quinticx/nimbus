@@ -16,6 +16,7 @@ class Image:
 
     def __init__(self, filename: str = "output.png"):
         """
+        Constructs new Image Sink
         Parameters
         ----------
         filename: str

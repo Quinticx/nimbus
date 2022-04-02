@@ -18,6 +18,7 @@ class IQ:
 
     def __init__(self, filename: str = "output.iq"):
         """
+        Constructs new IQ Sink
         Parameters
         ----------
         filename: str

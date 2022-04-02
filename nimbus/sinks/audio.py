@@ -10,6 +10,9 @@ class Audio:
     """
 
     def __init__(self):
+        """
+        Constructs a new Audio Sink
+        """
         self.stream = None
 
     def execute(self, signal: Samples):
