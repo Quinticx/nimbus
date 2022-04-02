@@ -1,6 +1,6 @@
 class Pipeline:
     """
-    
+
     Attributes
     ----------
     source: Source
@@ -11,10 +11,11 @@ class Pipeline:
         Output Sink
 
     """
+
     def __init__(self, source, transformers, sink):
         """
         Constructs a new Pipeline
-        
+
         Parameters
         ----------
         source: Source
@@ -37,7 +38,7 @@ class Pipeline:
         ----------
         num_iter: int
             Number of iterations
-        
+
 
         """
         index = 0
