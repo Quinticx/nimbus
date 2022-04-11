@@ -20,6 +20,9 @@ pytest-cov = "^3.0.0"
 flake8 = "^4.0.1"
 Sphinx = "^4.5.0"
 
+[tool.poetry.scripts]
+nimbus = "nimbus.__main__:main"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
