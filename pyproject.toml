@@ -11,6 +11,7 @@ numpy = "^1.22.3"
 Pillow = "^9.0.1"
 PyAudio = "^0.2.11"
 pyrtlsdr = "^0.2.92"
+PySDL2 = "^0.9.11"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.0.1"

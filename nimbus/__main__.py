@@ -15,7 +15,11 @@ def main():
     parser.add_argument("--image", dest="image_file", type=pathlib.Path)
     parser.add_argument("--audio", action="store_true")
     parser.add_argument(
-        "--sat", choices=["15", "18", "19"], type=str, help="Choice of POES Satellite"
+        "--sat",
+        default="15",
+        choices=["15", "18", "19"],
+        type=str,
+        help="Choice of POES Satellite",
     )
 
     args = parser.parse_args()
