@@ -1,14 +1,64 @@
 # Nimbus
-Nimbus, named after Nimbus-1, the first satellite 🛰️ to transmit using the APT format, is an open-source framework that is easily composable and allows for both real-time (coming soon) and pre-recorded signal processing and image reconstruction of weather satellite data.
+Nimbus, named after Nimbus-1, the first satellite 🛰️ to transmit using the APT format, is an open-source framework that is easily composable and allows for both real-time and pre-recorded signal processing and image reconstruction of weather satellite data.
+
+## Usage
+Nimbus has a command line wrapper for running commonly used settings, such as reading from an SDR and outputting to an image. There are several available Sources: reading from an SDR, reading from a .iq file, and reading from a .wav file. There are also several available outputs (called Sinks): output to a .wav file, output to a .iq file, output to a .png, output to audio (play sound), or output to a realtime window that renders the image row by row. 
+
+The general command line interface is as follows, where the wave, iq, and image files are optional, but you must pick a single source to read from and a satellite you are reading from (SDR is default if no other source is set). 
+
+```
+nimbus [-h] [--wave WAVE_FILE] [--iq IQ_FILE] [--image IMAGE_FILE] [--audio] [--sat {15,18,19}] [source]
+```
+Currently, only NOAA POES satellites (NOAA 15, 18, 19) are supported. Be on the lookout for GOES and METEOR support soon!
+
+## Examples
+For some "copy paste" examples, here are some commonly used settings for the command line
+
+To read NOAA 15 from an SDR and output a .wav file, a .iq file, a .png, play audio, and see the realtime rendering, run the following:
+```
+nimbus --image ./out.png --wave ./out.wav --iq ./out.iq --audio --sat 15
+```
+
+Let's say you didn't care about the wave file, iq file, and didn't want audio played. No problem! Just leave those options out:
+```
+nimbus --image ./out.png --sat 15
+```
+
+What if you don't have an SDR but have a .wav file from a NOAA pass? Easy! You can give the source as a path to the wavefile instead of leaving it blank.
+```
+nimbus example/path/to/wavefile.wav
+```
 
 
-## Useage
+Got an .iq file instead? No sweat for Nimbus. You can give the source as a path to the IQ file instead of leaving it blank.
+```
+nimbus example/path/to/iqfile.iq
+```
+
+
+## Demo
+One thing that Nimbus can do that a lot of other programs do not do is providing real-time rendering from an SDR. This allows the user to make adjustments to satellite position if needed. Also, let's just be honest, it's kinda cool too. 
+![real-time-demo](https://user-images.githubusercontent.com/32559461/162660124-d907e9eb-8290-4f05-af9a-3454110bb1c4.gif)
+
+Command ran to generate demo:
+```
+nimbus examples/10080101_16bit.wav
+```
+
+
+## Installation
+### Install with pip
+```
+pip install wxnimbus
+```
+
+### Installation from Git
 ```
 git clone https://github.com/Quinticx/nimbus.git
 cd nimbus 
 poetry install 
-poetry run python examples/wave_to_image.py
 ```
+
 
 ## Dependencies
 ### Ubuntu
@@ -39,8 +89,7 @@ APT Data is encoded into scan lines that are transmitted at a rate of 2 per seco
 
 ## Coming Soon
 Sooner:
-1. Real-time rendering
-2. Country border overlay on images 
+1. Country border overlay on images 
 
 Later:
 1. GOES Satellite 🛰️ support
