@@ -6,3 +6,5 @@ poetry.lock
 *.png
 *.jpg
 *.coverage
+*.json
+*.iq
