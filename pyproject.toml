@@ -3,6 +3,9 @@ name = "WxNimbus"
 version = "0.1.0"
 description = ""
 authors = ["Brianna Witherell"]
+packages = [
+    { include = 'nimbus' }, 
+]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
