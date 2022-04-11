@@ -104,7 +104,7 @@ def pipeline(
     return nimbus.Pipeline(
         source,
         transformer_list,
-        nimbus.sinks.Console(),
+        nimbus.sinks.SDL(width=2080, height=1000),
     )
 
 
