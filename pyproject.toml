@@ -1,11 +1,14 @@
 [tool.poetry]
 name = "WxNimbus"
-version = "0.1.0"
-description = ""
+version = "0.1.1"
+repository = "https://github.com/Quinticx/nimbus"
+description = "Nimbus is an open-source library and framework for real-time reading and decoding of data signals from NOAA polar satellites."
 authors = ["Brianna Witherell"]
 packages = [
     { include = 'nimbus' }, 
 ]
+readme = "README.md"
+license = "GPL-3.0-only"
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
