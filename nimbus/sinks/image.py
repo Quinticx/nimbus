@@ -60,5 +60,4 @@ class Image:
         img_buffer = np.stack(tmp)
 
         image = pil.fromarray(np.uint8(img_buffer[:, :2080]))
-
         image.save(self.filename)
