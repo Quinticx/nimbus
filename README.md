@@ -37,7 +37,7 @@ nimbus example/path/to/iqfile.iq
 
 
 ## Demo
-One thing that Nimbus can do that a lot of other programs do not do is providing real-time rendering from an SDR. This allows the user to make adjustments to satellite position if needed. Also, let's just be honest, it's kinda cool too. 
+One thing that Nimbus can do that a lot of other programs do not do is providing real-time rendering from an SDR. This allows the user to make adjustments to the antenna position if needed. Also, let's just be honest, it's kinda cool too. 
 ![real-time-demo](https://user-images.githubusercontent.com/32559461/162660124-d907e9eb-8290-4f05-af9a-3454110bb1c4.gif)
 
 Command ran to generate demo:
